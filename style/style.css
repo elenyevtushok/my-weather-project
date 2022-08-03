@@ -1,0 +1,82 @@
+.container {
+
+}
+.wrapper {
+  font-family: "Jost", sans-serif;
+  padding: 40px;
+  margin: 30px auto;
+  max-width: 800px;
+  max-height: 600px;
+  color: #101c62;
+  background: linear-gradient(135deg, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 22%,#e6f8fd 39%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.city {
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 20px 0;
+  color: #030d48;
+  text-shadow: 1px 1px 2px #6bcddf;
+}
+.temperature {
+  display: flex;
+  align-items: center;
+  margin: 30px auto;
+}
+.units{
+	position: relative;
+	top: -17px;
+	color: #101c62;
+	font-weight: 500;
+	font-size: 24px;
+}
+.units > a{
+	text-decoration: none;
+	color: #101c62;
+	font-weight: 500;
+	font-size: 24px;
+}
+.units > a:hover{
+	color: #F9B63D;
+}
+
+.main-image {
+  width: 100px;
+}
+.degrees {
+  font-size: 60px;
+  margin: 0 20px 0 30px;
+  text-shadow: 2px 5px 3px #6bcddf;
+}
+.other-inf {
+  list-style: none;
+  padding: 20px 0px;
+  opacity: 0.8;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 36px;
+}
+.col-4 {
+}
+.daily-forecast {
+}
+.day {
+  padding: 30px 0px;
+  border-bottom: 1px solid #ffffff;
+
+}
+.date, .time {
+	font-size: 20px;
+	font-weight: 500;
+}
+.col {
+}
+.degrees-daily {
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+.current{
+	background-color: #F9B63D !important;
+	border: 1px solid #F9B63D !important;
+}
