@@ -1,16 +1,10 @@
-let now = new Date();
-let showDate = document.querySelector(".date");
-let showTime = document.querySelector(".time");
-
-function formatDate(now) {
-	let dayNumber = now.getDay();
-	let monthNumber = now.getMonth();
-	let date = now.getDate();
-	let hours = now.getHours();
+function formatDate(timestamp) {
+	let date = new Date(timestamp);
+	let hours = date.getHours();
 	if (hours < 10) {
 		hours = `0${hours}`;
 	}
-	let minutes = now.getMinutes();
+	let minutes = date.getMinutes();
 	if (minutes < 10) {
 		minutes = `0${minutes}`;
 	}
@@ -20,35 +14,21 @@ function formatDate(now) {
 		"Monday",
 		"Tuesday",
 		"Wednesday",
-		"Thuersday",
+		"Thursday",
 		"Friday",
-		"Saturday"
+		"Saturday",
 	];
-	let day = days[now.getDay()];
+	let day = days[date.getDay()];
+	return `${day} ${hours}:${minutes}`;
+}
+function formatDay(timestamp) {
+	let date = new Date(timestamp * 1000);
+	let day = date.getDay();
+	let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-	let months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December"
-	];
-	let month = months[now.getMonth()];
-
-	let messageDate = `${date} ${month}, ${day}`;
-	let messageTime = `${hours}:${minutes}`;
-	showDate.innerHTML = messageDate;
-	showTime.innerHTML = messageTime;
+	return days[day];
 }
 
-formatDate(now);
 
 //==============================================================
 function searchCity(event) {
@@ -85,6 +65,8 @@ function showTemperature(response) {
 	let wind = Math.round(response.data.wind.speed);
 	let windElement = document.querySelector("#wind");
 	windElement.innerHTML = `Wind: ${wind} km/h`;
+	let dateElement = document.querySelector("#date");
+	dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function fetchWeatherByCity(city) {
