@@ -74,9 +74,17 @@ document.querySelector("#buttonCurrentLocation").addEventListener("click", updat
 function showTemperature(response) {
 	let city = document.querySelector(".city");
 	city.innerHTML = response.data.name;
+	let descriptionElement = document.querySelector(".description");
+	descriptionElement.innerHTML = response.data.weather[0].description;
 	let temperature = Math.round(response.data.main.temp);
 	let temperatureElement = document.querySelector("#temperature");
-	temperatureElement.innerHTML = `${temperature}°C`;
+	temperatureElement.innerHTML = `${temperature}`;
+	let humidity = response.data.main.humidity;
+	let humidityElement = document.querySelector("#humidity");
+	humidityElement.innerHTML = `Humidity: ${humidity}%`;
+	let wind = Math.round(response.data.wind.speed);
+	let windElement = document.querySelector("#wind");
+	windElement.innerHTML = `Wind: ${wind} km/h`;
 }
 
 function fetchWeatherByCity(city) {

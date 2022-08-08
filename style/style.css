@@ -66,9 +66,10 @@
   border-bottom: 1px solid #ffffff;
 
 }
-.date, .time {
+.date, .time, .description {
 	font-size: 20px;
 	font-weight: 500;
+	text-transform: capitalize;
 }
 .col {
 }
