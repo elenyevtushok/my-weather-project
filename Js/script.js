@@ -52,11 +52,13 @@ document.querySelector("#buttonCurrentLocation").addEventListener("click", updat
 
 
 function showTemperature(response) {
+	celsiusTemperature = response.data.main.temp;
+
 	let city = document.querySelector(".city");
 	city.innerHTML = response.data.name;
 	let descriptionElement = document.querySelector(".description");
 	descriptionElement.innerHTML = response.data.weather[0].description;
-	let temperature = Math.round(response.data.main.temp);
+	let temperature = Math.round(celsiusTemperature);
 	let temperatureElement = document.querySelector("#temperature");
 	temperatureElement.innerHTML = `${temperature}`;
 	let humidity = response.data.main.humidity;
@@ -88,24 +90,29 @@ function fetchWeatherByCoordinate(position) {
 
 //==============================================================
 
-let showC = document.querySelector("#celsius-link");
-let showF = document.querySelector("#fahrenheit-link");
-showF.addEventListener("click", convertF);
-showC.addEventListener("click", convertC);
+function displayFahrenheitTemperature(event) {
+	event.preventDefault();
+	let temperatureElement = document.querySelector("#temperature");
+	celsiusLink.classList.remove("active");
+	fahrenheitLink.classList.add("active");
+	let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+	temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+};
+function displayCelsiusTemperature(event) {
+	event.preventDefault();
+	celsiusLink.classList.add("active");
+	fahrenheitLink.classList.remove("active");
+	let temperatureElement = document.querySelector("#temperature");
+	temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
 
-function convertF(event) {
-	event.preventDefault();
-	let link = document.querySelector("#degrees");
-	let c = 30;
-	let f = Math.round(c * 1.8 + 32);
-	link.innerHTML = f;
-};
-function convertC(event) {
-	event.preventDefault();
-	let link = document.querySelector("#degrees");
-	let c = 30;
-	let f = Math.round(c * 1.8 + 32);
-	link.innerHTML = c;
-};
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+fetchWeatherByCity("Valencia");
 
 
