@@ -23,11 +23,11 @@ body {
 }
 .weather{
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 .weather-forecast-today{
-	
+	padding: 30px;
 }
 .city {
 	font-weight: 700;
@@ -82,42 +82,36 @@ body {
   line-height: 36px;
 }
 .weather-forecast{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
+	padding: 30px;
 }
 .weather-forecast-block {
 	display: flex;
 	align-items: center;
-	font-size: 20px;
+	flex-wrap: wrap;
+	font-size: 18px;
 	font-weight: 600;
-	padding: 30px;
+	padding: 16px;
 	transition: all 0.3s ease-out 0s;
 }
 .weather-forecast-block:hover{
-  background-color: #48484a;
-  opacity: 0.6;
+  background-color: #101c62;
+  opacity: 0.9;
   color: #ffffff;
 }
 .weather-forecast-day {
-	margin: auto 20px;
 	
 }
 .weather-forecast-date {
-	margin: auto 20px;
 	font-weight: 500;
 	
 }
 .weather-forecast-temperatures {
-	margin: auto 30px;
+	
 	
 }
 .weather-forecast-temperature-max {
-	
 }
 .weather-forecast-temperature-min {
-	
 }
 
 .description{
@@ -145,4 +139,7 @@ body {
 	color: #101c62;
 	font-size: 16px;
 	font-weight: 400;
+}
+.opencode > a{
+	color: #EC6E4C;
 }
