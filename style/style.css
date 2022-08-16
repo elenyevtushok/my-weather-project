@@ -1,89 +1,148 @@
-.container {
-
+body {
+	
+  	background-attachment: fixed;
+	background-image: url(../images/dimitry-b-Yr1-wDTJXj4-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	min-width: 540px;
+	padding: 0;
 }
-.wrapper {
-  font-family: "Jost", sans-serif;
+.input-group{
+	justify-content: center;
+}
+.form-control{
+	max-width: 400px;
+}
+.main-container {
+  background-color: rgba(169, 212, 215, 0.7);
+  margin: 40px 75px;
   padding: 40px;
-  margin: 30px auto;
-  max-width: 800px;
-  max-height: 600px;
-  color: #101c62;
-  background: linear-gradient(135deg, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 22%,#e6f8fd 39%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #030d48;
+  font-family: "Montserrat";
 }
-
+.weather{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.weather-forecast-today{
+	
+}
 .city {
-  font-size: 50px;
+	font-weight: 700;
+  font-size: 60px;
   letter-spacing: 2px;
   margin: 0;
   padding: 20px 0;
-  color: #030d48;
-  text-shadow: 1px 1px 2px #6bcddf;
+  text-shadow: 1px 1px 2px #48484a;
+}
+.date, .time {
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: capitalize;
 }
 .temperature {
   display: flex;
   align-items: center;
   margin: 30px auto;
+  font-weight: 700;
 }
 .units{
 	position: relative;
 	top: -17px;
 	color: #101c62;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 24px;
 }
 .units > a{
 	text-decoration: none;
 	color: #101c62;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 24px;
 }
 .units > a:hover{
-	color: #F9B63D;
+	color: #EC6E4C;
 }
 
 .main-image {
   width: 100px;
 }
 .degrees {
-  font-size: 60px;
+  font-size: 70px;
   margin: 0 20px 0 30px;
-  text-shadow: 2px 5px 3px #6bcddf;
+  text-shadow: 2px 5px 3px #48484a;
+;
 }
 .other-inf {
   list-style: none;
   padding: 20px 0px;
-  opacity: 0.8;
   font-size: 20px;
-  font-style: italic;
+  font-weight: 600;
   line-height: 36px;
 }
-.col-4 {
-}
-.daily-forecast {
-}
-.day {
-  padding: 30px 0px;
-  border-bottom: 1px solid #ffffff;
+.weather-forecast{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
 }
-.date, .time, .description {
+.weather-forecast-block {
+	display: flex;
+	align-items: center;
 	font-size: 20px;
-	font-weight: 500;
-	text-transform: capitalize;
+	font-weight: 600;
+	padding: 30px;
+	transition: all 0.3s ease-out 0s;
 }
-.col {
+.weather-forecast-block:hover{
+  background-color: #48484a;
+  opacity: 0.6;
+  color: #ffffff;
+}
+.weather-forecast-day {
+	margin: auto 20px;
+	
+}
+.weather-forecast-date {
+	margin: auto 20px;
+	font-weight: 500;
+	
+}
+.weather-forecast-temperatures {
+	margin: auto 30px;
+	
+}
+.weather-forecast-temperature-max {
+	
+}
+.weather-forecast-temperature-min {
+	
+}
+
+.description{
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 .degrees-daily {
 	font-size: 18px;
 	letter-spacing: 1px;
 }
+.search{
+	background-color: #EC6E4C !important;
+	border: 1px solid #EC6E4C !important;
+}
 .current{
-	background-color: #F9B63D !important;
-	border: 1px solid #F9B63D !important;
+	background-color: #101c62 !important;
+	border: 1px solid #101c62 !important;
+	color: #ffffff !important;
 }
 .opencode{
+	margin: 30px auto;
 	text-decoration: none;
 	text-align: center;
 	color: #101c62;
-	font-size: 14px;
+	font-size: 16px;
+	font-weight: 400;
 }

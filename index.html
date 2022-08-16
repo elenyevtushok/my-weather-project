@@ -10,37 +10,37 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-		rel="stylesheet" />
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,400&display=swap"
+		rel="stylesheet">
 
-	
+
 </head>
 
 <body>
-	<div class="container">
-		<div class="wrapper">
-			<form class="input-group mb-3" id="lookCity">
-				<input type="text" id= "search-text-input" class="form-control" placeholder="Enter city" aria-label="Search city"
-					aria-describedby="basic-addon2">
-				<div class="input-group-append">
-					<button class="btn btn-info search" type="submit" value="Search">Search</button>
-					<button class="btn btn-info current" id="buttonCurrentLocation">Current</button>
-				</div>
-			</form>
-			<div class="row">
-				<div class="col-8">
+	<div class="container mt-5">
+		<form class="input-group mb-3" id="lookCity">
+			<input type="text" id="search-text-input" class="form-control" placeholder="Enter city"
+				aria-label="Search city" aria-describedby="basic-addon2">
+			<div class="input-group-append">
+				<button class="btn btn-info search" type="submit" value="Search">Search</button>
+				<button class="btn btn-info current" id="buttonCurrentLocation">Current</button>
+			</div>
+		</form>
+		<section class="main-container">
+			<div class="weather">
+				<div class="weather-forecast-today">
 					<div class="general">
 						<h1 class="city">Valencia</h1>
-						<div class ="date" id="date">Monday 10:05</div>
-						<div class="description">Sunny</div>
+						<div class="date" id="date">Monday 10:05</div>
 						
+
 					</div>
 					<div class="temperature">
 						<img class="main-image" src="http://openweathermap.org/img/wn/04d@2x.png" alt="Sunny" id="icon">
-						
+
 						<span class="degrees" id="temperature">30</span>
 						<span class="units">
 							<a href="#" id="celsius-link">°C</a>
@@ -48,40 +48,83 @@
 							<a href="#" id="fahrenheit-link">°F</a>
 						</span>
 					</div>
+					<div class="description">Sunny</div>
 					<ul class="other-inf">
 						<li id="humidity"><i class="fa-solid fa-droplet"></i> Humidity: 46%</li>
 						<li id="wind"><i class="fa-solid fa-wind"></i> Wind: 7 km/h</li>
 					</ul>
 				</div>
-				<div class="col-4">
-					<div class="daily-forecast">
-						<div class="day">
-							<div class="date">8 July</div>
-							<img src="images/cloudy.png" alt="" width="80" />
-							<span class="degrees-daily">29°C / 23°C</span>
+				<div class="weather-forecast">
+					<div class="weather-forecast-block">
+						<div class="weather-forecast-day">Wednesday</div>
+						<div class="weather-forecast-date">17.08</div>
+						<div class="weather-forecast-icon">
+							<img src="images/cloudy.png" alt="" width="50">
 						</div>
-						<div class="day">
-							<div class="date">9 July</div>
-							<img src="images/rain.png" alt="" width="80" />
-							<span class="degrees-daily">27°C / 21°C</span>
+						<div class="weather-forecast-temperatures">
+							<span class="weather-forecast-temperature-max"> 28</span> <span class="marker">°C |</span>
+							<span class="weather-forecast-temperature-min"> 22</span> <span class="marker">°C</span>
 						</div>
-						<div class="day">
-							<div class="date">10 July</div>
-							<img src="images/grim.png" alt="" width="80" />
-							<span class="degrees-daily">25°C / 20°C</span>
+					</div>
+					<div class="weather-forecast-block">
+						<div class="weather-forecast-day">Wednesday</div>
+						<div class="weather-forecast-date">17.08</div>
+						<div class="weather-forecast-icon">
+							<img src="images/cloudy.png" alt="" width="50">
+						</div>
+						<div class="weather-forecast-temperatures">
+							<span class="weather-forecast-temperature-max"> 28</span> <span class="marker">°C |</span>
+							<span class="weather-forecast-temperature-min"> 22</span> <span class="marker">°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast-block">
+						<div class="weather-forecast-day">Wednesday</div>
+						<div class="weather-forecast-date">17.08</div>
+						<div class="weather-forecast-icon">
+							<img src="images/cloudy.png" alt="" width="50">
+						</div>
+						<div class="weather-forecast-temperatures">
+							<span class="weather-forecast-temperature-max"> 28</span> <span class="marker">°C |</span>
+							<span class="weather-forecast-temperature-min"> 22</span> <span class="marker">°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast-block">
+						<div class="weather-forecast-day">Wednesday</div>
+						<div class="weather-forecast-date">17.08</div>
+						<div class="weather-forecast-icon">
+							<img src="images/cloudy.png" alt="" width="50">
+						</div>
+						<div class="weather-forecast-temperatures">
+							<span class="weather-forecast-temperature-max"> 28</span> <span class="marker">°C |</span>
+							<span class="weather-forecast-temperature-min"> 22</span> <span class="marker">°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast-block">
+						<div class="weather-forecast-day">Wednesday</div>
+						<div class="weather-forecast-date">17.08</div>
+						<div class="weather-forecast-icon">
+							<img src="images/cloudy.png" alt="" width="50">
+						</div>
+						<div class="weather-forecast-temperatures">
+							<span class="weather-forecast-temperature-max"> 28</span> <span class="marker">°C |</span>
+							<span class="weather-forecast-temperature-min"> 22</span> <span class="marker">°C</span>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="opencode">
-			<a href="https://github.com/elenyevtushok/my-weather-project" target="_blank">Open-source code</a>, by Olena
-			Yevtushok
-		</div>
+			<footer class="opencode">
+				<hr />
+				Coded by Olena Yevtushok
+				<br />
+				Open-source code on 
+				<a href="https://github.com/elenyevtushok/my-weather-project" target="_blank">GitHub</a>
+				<br />
+				2022 
+			</footer>
+		</section>
+		<script src="Js/script.js" src="https://kit.fontawesome.com/a254743a68.js" crossorigin="anonymous">
+		</script>
 	</div>
-	
-	<script src="Js/script.js" src="https://kit.fontawesome.com/a254743a68.js" crossorigin="anonymous">
-	</script>
 </body>
 
 </html>
