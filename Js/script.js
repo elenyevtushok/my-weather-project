@@ -76,6 +76,7 @@ function searchCity(event) {
 	event.preventDefault();
 	let currentCity = document.querySelector("#search-text-input").value;
 	fetchWeatherByCity(currentCity);
+	findPhotoCity(currentCity);
 }
 
 function updateWeatherByCurrentLocation(event) {
@@ -126,6 +127,7 @@ function showTemperature(response) {
 function fetchWeatherByCity(city) {
 	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 	axios.get(apiUrl).then(showTemperature);
+	findPhotoCity(city);
 }
 
 function fetchWeatherByCoordinate(position) {
@@ -165,3 +167,21 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 fetchWeatherByCity("Valencia");
 
+
+//Dynamic background
+
+function showPhotoCity(response) {
+	let photoAuthor = document.querySelector("#photo_details");
+	photoAuthor.innerHTML = `${response.data.user.first_name} ${response.data.user.last_name}`;
+	photoAuthor.setAttribute("href", response.data.user.links.html);
+	let elementImg = document.querySelector("body");
+	elementImg.style.setProperty(
+		`background-image`,
+		`url(${response.data.urls.regular})`
+	);
+}
+function findPhotoCity(city) {
+	let apiPhoto = "OEBWt1FG3rDG7c3DP-lvBC1kvBf9xCg2pVZcGBMnXek";
+	let apiUrlPhoto = `https://api.unsplash.com/photos/random?&query=${city}&w=1200&content-filter=high&topics=nature,sky,rain,sun,arcitecture&orientation=landscape&client_id=${apiPhoto}`;
+	axios.get(apiUrlPhoto).then(showPhotoCity);
+}
