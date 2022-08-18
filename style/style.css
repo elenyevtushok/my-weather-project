@@ -93,21 +93,34 @@ body {
 	padding: 16px;
 	transition: all 0.3s ease-out 0s;
 }
+@media (max-width: 770px){
+	.main-container {
+		padding: 10px;
+	}
+	.weather-forecast-block{
+		flex-direction: column;
+		justify-content: center;
+	}
+	.form-control{
+	max-width: 200px;
+	}
+	.main-container {
+  		background-color: rgba(169, 212, 215, 0.8);
+  		margin: 10px 15px;
+	}
+}
 .weather-forecast-block:hover{
   background-color: #101c62;
   opacity: 0.9;
   color: #ffffff;
 }
-.weather-forecast-day {
-	
-}
+.weather-forecast-day 
 .weather-forecast-date {
 	font-weight: 500;
 	
 }
 .weather-forecast-temperatures {
-	
-	
+
 }
 .weather-forecast-temperature-max {
 }

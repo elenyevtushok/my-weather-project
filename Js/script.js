@@ -76,7 +76,6 @@ function searchCity(event) {
 	event.preventDefault();
 	let currentCity = document.querySelector("#search-text-input").value;
 	fetchWeatherByCity(currentCity);
-	findPhotoCity(currentCity);
 }
 
 function updateWeatherByCurrentLocation(event) {
@@ -122,12 +121,12 @@ function showTemperature(response) {
 	iconElement.setAttribute("alt", response.data.weather[0].description);
 
 	getForecast(response.data.coord);
+	findPhotoCity(response.data.name);
 }
 
 function fetchWeatherByCity(city) {
 	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 	axios.get(apiUrl).then(showTemperature);
-	findPhotoCity(city);
 }
 
 function fetchWeatherByCoordinate(position) {
@@ -182,6 +181,6 @@ function showPhotoCity(response) {
 }
 function findPhotoCity(city) {
 	let apiPhoto = "OEBWt1FG3rDG7c3DP-lvBC1kvBf9xCg2pVZcGBMnXek";
-	let apiUrlPhoto = `https://api.unsplash.com/photos/random?&query=${city}&w=1200&content-filter=high&topics=nature,sky,rain,sun,arcitecture&orientation=landscape&client_id=${apiPhoto}`;
+	let apiUrlPhoto = `https://api.unsplash.com/photos/random?&query=${city}&w=1200&content-filter=high&orientation=landscape&client_id=${apiPhoto}`; 
 	axios.get(apiUrlPhoto).then(showPhotoCity);
 }
